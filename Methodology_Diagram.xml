@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.0">
+  <diagram name="Page-1" id="z3th3MxvgZVmCOv0X_2r">
+    <mxGraphModel dx="965" dy="867" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="User (Normal or Malicious)&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="30" x="130" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;" value="Application" vertex="1">
+          <mxGeometry height="490" width="570" x="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" edge="1" parent="4" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="485" y="240" />
+            </Array>
+            <mxPoint x="479.67" y="50" as="sourcePoint" />
+            <mxPoint x="479.67" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="Combined Prompt" vertex="1">
+          <mxGeometry height="60" width="120" x="425" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7" edge="1" parent="4" source="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="Llama 3" vertex="1">
+          <mxGeometry height="60" width="120" x="425" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;LeakAgent Evaluation Layer&lt;/div&gt;&lt;div&gt;- PII Scan&lt;/div&gt;&lt;div&gt;- Anonymize Columns&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="149.97" x="130" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="4" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="Interface / Input Field" vertex="1">
+          <mxGeometry height="60" width="120" x="25" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="4" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Output" vertex="1">
+          <mxGeometry height="30" width="60" x="330" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="Pre-Prompt Injection (System Instructions)&lt;div&gt;- Context rules enforced&lt;/div&gt;&lt;div&gt;- Attempt to resist jailbreaks&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="170" x="200.01000000000002" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="4" source="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="API Layer (LLM Endpoint)" vertex="1">
+          <mxGeometry height="60" width="120" x="425" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="4" source="13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.031;entryY=0.487;entryDx=0;entryDy=0;entryPerimeter=0;" target="6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" edge="1" parent="4" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="210" as="sourcePoint" />
+            <mxPoint x="570" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="Prompt Construction Pipeline" vertex="1">
+          <mxGeometry height="20" width="220" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="4" style="rounded=1;whiteSpace=wrap;html=1;" value="LLM Evaluation Pipeline" vertex="1">
+          <mxGeometry height="20" width="220" x="10" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460.01" y="619.9999999999999" as="sourcePoint" />
+            <mxPoint x="115.01694915254234" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;Output + Risk Metadata&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="384.99" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Researcher" vertex="1">
+          <mxGeometry height="60" width="30" x="130" y="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
