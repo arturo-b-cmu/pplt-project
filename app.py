@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from langchain_community.llms import Ollama
 from langchain_community.vectorstores import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -104,6 +104,51 @@ def askPDFPost():
     }
 
     return response_answer
+
+@app.route("/v1/chat/completions", methods=["POST"])
+def openai_compatible_chat():
+    try:
+        json_content = request.json
+        messages = json_content.get("messages", [])
+        
+        # Extract only user content
+        user_msg = next((m["content"] for m in messages if m["role"] == "user"), "")
+
+        vector_store = Chroma(persist_directory=folder_path, embedding_function=embedding)
+        retriever = vector_store.as_retriever(
+            search_type="similarity_score_threshold",
+            search_kwargs={ "k": 20, "score_threshold": 0.1 }
+        )
+
+        document_chain = create_stuff_documents_chain(cached_llm, raw_prompt)
+        chain = create_retrieval_chain(retriever, document_chain)
+
+        result = chain.invoke({"input": user_msg})
+
+        response_text = result["answer"] if isinstance(result, dict) else result
+
+        response_answer = jsonify({
+            "object": "chat.completion",
+            "choices": [
+                {
+                    "message": {
+                        "role": "assistant",
+                        "content": response_text
+                    }
+                }
+            ]
+        })
+
+        return response_answer
+
+    except Exception as e:
+        print("EXCEPTION:", e)
+        return jsonify({
+            "object": "chat.completion",
+            "choices": [
+                {"message": {"role": "assistant", "content": ""}}
+            ]
+        }), 200
 
 
 # @app.route("/pdf", methods=["POST"])
