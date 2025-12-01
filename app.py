@@ -170,6 +170,26 @@ def pdfPost():
     }
     return response
 
+@app.route("/status", methods=["GET"])
+def get_status():
+    """Check uploaded files and database status"""
+    import os
+    
+    # Check files in pdf folder
+    pdf_files = []
+    if os.path.exists("pdf"):
+        pdf_files = [f for f in os.listdir("pdf") if os.path.isfile(os.path.join("pdf", f))]
+    
+    # Check ChromaDB
+    vector_store = Chroma(persist_directory=folder_path, embedding_function=embedding)
+    collection = vector_store._collection
+    chunk_count = collection.count()
+    
+    return {
+        "uploaded_files": pdf_files,
+        "file_count": len(pdf_files),
+        "total_chunks_in_db": chunk_count
+    }
 
 
 def start_app():
