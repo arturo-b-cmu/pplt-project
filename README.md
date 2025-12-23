@@ -2,6 +2,9 @@
 
 A Retrieval Augmented Generation (RAG) system built with Llama 3, Flask, and ChromaDB for researching indirect prompt injection vulnerabilities in medical AI applications. This project demonstrates privacy protection mechanisms and quantifies security risks in LLM-powered document query systems.
 
+![Attack flow diagram](diagrams/pplt-project-diagram.png)
+
+
 ## 🎯 Research Focus
 
 This implementation explores:
