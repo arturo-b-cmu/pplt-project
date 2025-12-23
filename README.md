@@ -253,10 +253,10 @@ This system has been used to study:
 
 ## 👤 Authors
 
-Arturo Bohuchot
-Chloe Cowan
-Jack Lenga
-Samhitha Duggirala
+- Arturo Bohuchot
+- Chloe Cowan
+- Jack Lenga
+- Samhitha Duggirala
 
 Carnegie Mellon University  
 
