@@ -251,9 +251,13 @@ This system has been used to study:
 - [HEW FIPPs Principles](https://www.hhs.gov/foia/privacy/index.html)
 
 
-## 👤 Author
+## 👤 Authors
 
-Arturo Bohuchot  
+Arturo Bohuchot
+Chloe Cowan
+Jack Lenga
+Samhitha Duggirala
+
 Carnegie Mellon University  
 
 
